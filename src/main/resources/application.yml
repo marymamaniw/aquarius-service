@@ -1,0 +1,30 @@
+server:
+  address: 0.0.0.0
+  port: 8080
+
+spring:
+  application:
+    name: aquarius service
+  datasource:
+    url: jdbc:mysql://localhost:3307/aquarius_service_db
+    username: admin
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  messages:
+    basename: messages
+    encoding: UTF-8
+  flyway:
+    enabled: true
+    url: jdbc:mysql://localhost:3307/aquarius_service_db
+    user: admin
+    password: password
+    locations: classpath:db/migration
+    validate-on-migrate: true
+
